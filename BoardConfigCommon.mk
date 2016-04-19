@@ -139,6 +139,9 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libmmcamera_wavelet_lib.so|libc_util.so \
     /system/vendor/lib/libizat_core.so|libshims_get_process_name.so
 
+# Peripheral manager
+TARGET_PER_MGR_ENABLED := true    
+
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
