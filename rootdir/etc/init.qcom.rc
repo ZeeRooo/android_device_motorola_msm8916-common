@@ -485,6 +485,7 @@ service stml0xx /system/vendor/bin/stml0xx_wrapper.sh
     user compass
     group compass misc input
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 service mmi-boot-sh /system/vendor/bin/init.mmi.boot.sh
     class core
@@ -519,7 +520,7 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
-    writepid /dev/cpuset/system-background/tasks
+    writepid /dev/cpuset/camera-daemon/tasks
 
 service charger /charger
     class charger
@@ -537,6 +538,7 @@ service qseecomd /system/vendor/bin/qseecomd
    class core
    user root
    group root
+   writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /vendor/bin/thermal-engine
    class main
@@ -545,16 +547,19 @@ service thermal-engine /vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
    group root
+   writepid /dev/cpuset/system-background/tasks
 
 service thermal-com /vendor/bin/thermal-engine --minimode
    class main
    user root
    disabled
+   writepid /dev/cpuset/system-background/tasks
 
 service time_daemon /system/vendor/bin/time_daemon
    class late_start
    user root
    group root
+   writepid /dev/cpuset/system-background/tasks
 
 # corefile limit and ETB enabling
 on property:persist.debug.trace=1
@@ -593,6 +598,7 @@ service rmt_storage /vendor/bin/rmt_storage
     user root
     group system wakelock
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:ro.boot.emmc=true
     start rmt_storage
@@ -628,11 +634,13 @@ service qmuxd /vendor/bin/qmuxd
     class main
     user root
     group radio audio bluetooth gps nfc oem_2950
+    writepid /dev/cpuset/system-background/tasks
 
 service netmgrd /vendor/bin/netmgrd
     class main
     user root
     group root wifi wakelock radio inet oem_2950
+    writepid /dev/cpuset/system-background/tasks
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
@@ -656,6 +664,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 service ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
@@ -676,11 +685,12 @@ on property:sys.wifi.tethering=true
     write /sys/class/net/wlan0/queues/rx-3/rps_cpus ${sys.usb.rps_mask}
 
 service ims_rtp_daemon /vendor/bin/ims_rtp_daemon
-	  class main
-	  user system
-	  socket ims_rtpd stream 0660 system radio
-	  group radio diag diag inet log
-	  disabled
+    class main
+    user system
+    socket ims_rtpd stream 0660 system radio
+    group radio diag diag inet log
+    disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
@@ -690,6 +700,7 @@ service imscmservice /vendor/bin/imscmservice
     user system
     group radio diag diag log
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start imscmservice
@@ -700,6 +711,7 @@ service imsdatadaemon /vendor/bin/imsdatadaemon
     socket ims_datad stream 0660 system radio
     group system wifi radio inet log diag
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
@@ -714,6 +726,13 @@ on class_start:late_start
     write /sys/devices/system/cpu/cpu0/core_ctl/is_big_cluster 0
     write /sys/devices/system/cpu/cpu0/core_ctl/task_thres 4
     
+    # add a cpuset for the camera daemon
+    # we want all the cores for camera
+    mkdir /dev/cpuset/camera-daemon
+    chown system system /dev/cpuset/camera-daemon
+    chown system system /dev/cpuset/camera-daemon/tasks
+    chmod 0664 /dev/cpuset/camera-daemon/tasks
+    
     # Update foreground and background cpusets
     # Reserve CPU 3 for the top app
     write /dev/cpuset/foreground/cpus 0-2
@@ -721,12 +740,14 @@ on class_start:late_start
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-1
     write /dev/cpuset/top-app/cpus 0-3
+    write /dev/cpuset/camera-daemon/cpus 0-3
 
 service imsqmidaemon /vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
+    writepid /dev/cpuset/system-background/tasks
 
 on charger
     trigger early-fs
