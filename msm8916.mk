@@ -91,6 +91,7 @@ PRODUCT_PACKAGES += \
     Snap \
     android.hardware.camera.provider@2.4-impl \
     libc_util \
+    libshims_camera \
     camera.device@1.0-impl
 
 # LOSActions
