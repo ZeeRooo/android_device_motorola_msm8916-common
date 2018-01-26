@@ -719,7 +719,7 @@ on property:sys.ims.QMI_DAEMON_STATUS=1
 on class_start:late_start
     # Enable core control
     write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
-    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 1
+    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 0
     write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 68
     write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 30
     write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms 100
@@ -736,7 +736,6 @@ on class_start:late_start
     # Update foreground and background cpusets
     # Reserve CPU 3 for the top app
     write /dev/cpuset/foreground/cpus 0-2
-    write /dev/cpuset/foreground/boost/cpus 0-3
     write /dev/cpuset/background/cpus 0-2
     write /dev/cpuset/system-background/cpus 0-1
     write /dev/cpuset/top-app/cpus 0-3
