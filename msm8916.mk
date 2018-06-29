@@ -96,8 +96,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     libc_util \
     libshims_camera \
-    libboringssl-compat \
-    camera.device@1.0-impl
+    libboringssl-compat
 
 # LOSActions
 PRODUCT_PACKAGES += \
