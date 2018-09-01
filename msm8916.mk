@@ -91,14 +91,15 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
-# Camera
+# Camera   
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.msm8916 \
     libbson \
     libc_util \
     libshims_camera \
-    Snap
+    Snap \
+    $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
 
 # Charger
 PRODUCT_PACKAGES += \
