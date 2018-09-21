@@ -592,12 +592,6 @@ service rmt_storage /system/bin/rmt_storage
 on property:ro.boot.emmc=true
     start rmt_storage
 
-on property:vendor.wc_transport.start_hci=true
-    start start_hci_filter
-
-on property:vendor.wc_transport.start_hci=false
-    stop start_hci_filter
-
 # FM
 on property:vendor.hw.fm.init=0
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
