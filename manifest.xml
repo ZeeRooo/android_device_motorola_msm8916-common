@@ -28,7 +28,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.camera.provider</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport arch="32">passthrough</transport>
         <version>2.4</version>
         <interface>
             <name>ICameraProvider</name>
@@ -86,7 +86,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport arch="32">passthrough</transport>
         <version>2.1</version>
         <interface>
             <name>IComposer</name>
@@ -95,7 +95,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport arch="32">passthrough</transport>
         <version>2.0</version>
         <interface>
             <name>IMapper</name>
@@ -130,15 +130,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.power</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>IPower</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
@@ -165,12 +156,12 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.renderscript</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport arch="32">passthrough</transport>
         <version>1.0</version>
     </hal>
     <hal format="hidl">
         <name>android.hardware.sensors</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport arch="32">passthrough</transport>
         <version>1.0</version>
         <interface>
             <name>ISensors</name>
