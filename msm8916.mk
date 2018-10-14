@@ -22,7 +22,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := framework-res
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-	external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \
+    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -70,7 +70,7 @@ PRODUCT_PACKAGES += \
     tinymix \
     android.hardware.audio@2.0-impl \
     android.hardware.audio@2.0-service \
-	android.hardware.audio.effect@2.0-impl
+    android.hardware.audio.effect@2.0-impl
 
 # Only build audio HAL on non-lux devices
 ifeq ($(filter lux,$(TARGET_DEVICE)),)
@@ -86,13 +86,13 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_PACKAGES += \
     camera.msm8916 \
     libbson \
-	Snap \
+    Snap \
     android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl
 	
-# CMActions
-#PRODUCT_PACKAGES += \
-#    CMActions
+# LOSActions
+PRODUCT_PACKAGES += \
+    LOSActions
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -109,21 +109,21 @@ PRODUCT_PACKAGES += \
     copybit.msm8916 \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
-	libgenlock \
-	android.hardware.graphics.allocator@2.0-impl \
+    libgenlock \
+    android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-	android.hardware.renderscript@1.0-impl \
+    android.hardware.renderscript@1.0-impl \
     android.hardware.renderscript@1.0-service \
-	android.hardware.graphics.composer@2.1-impl
+    android.hardware.graphics.composer@2.1-impl
 	
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbt-vendor \
     android.hardware.bluetooth@1.0-impl \
-	android.hardware.bluetooth@1.0-service
+    android.hardware.bluetooth@1.0-service
 
 # Ebtables
 PRODUCT_PACKAGES += \
@@ -146,10 +146,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.msm8916 \
     android.hardware.gnss@1.0-impl \
-	android.hardware.gnss@1.0-service
+    android.hardware.gnss@1.0-service
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -202,7 +202,7 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
     libshim_ril \
-	libxml2
+    libxml2
 	
 # Seccomp
 PRODUCT_COPY_FILES += \
@@ -229,17 +229,17 @@ PRODUCT_PACKAGES += \
     p2p_supplicant_overlay.conf \
     wpa_supplicant_overlay.conf \
     WCNSS_wlan_dictionary.dat \
-	hostapd \
-	wpa_supplicant \
-	libcurl \
+    hostapd \
+    wpa_supplicant \
+    libcurl \
     libqsap_sdk \
     tcpdump \
-	wcnss_service \
-	libwcnss_qmi \
-	libwpa_client \
-	wificond \
+    wcnss_service \
+    libwcnss_qmi \
+    libwpa_client \
+    wificond \
     wifilogd \
-	android.hardware.wifi@1.0-service
+    android.hardware.wifi@1.0-service
 
 PRODUCT_COPY_FILES += \
     kernel/motorola/msm8916/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_cfg.dat \
@@ -250,7 +250,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
     ro.debuggable=1 \
     persist.service.adb.enable=1 \
-	persist.sys.usb.config=adb
+    persist.sys.usb.config=adb
 	
 # Usb
 PRODUCT_PACKAGES += \
