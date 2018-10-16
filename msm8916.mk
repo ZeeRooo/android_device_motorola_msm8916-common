@@ -144,12 +144,11 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8916 \
-    android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-service
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
+	gps.conf \
+    libgnss \
+    libgnsspps \
+    android.hardware.gnss@1.0-impl-qti \
+    android.hardware.gnss@1.0-service-qti
 
 # IRSC
 PRODUCT_COPY_FILES += \
