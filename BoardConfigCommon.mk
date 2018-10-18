@@ -22,9 +22,7 @@ BOARD_VENDOR := motorola-qcom
 
 TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 
-TARGET_FS_CONFIG_GEN += \
-    $(VENDOR_PATH)/fs_config/file_caps.fs \
-    $(VENDOR_PATH)/fs_config/mot_aids.fs
+TARGET_FS_CONFIG_GEN += $(VENDOR_PATH)/configs/config.fs
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8916
