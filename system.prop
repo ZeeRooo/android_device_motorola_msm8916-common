@@ -21,10 +21,9 @@ vendor.voice.path.for.pcm.voip=true
 ro.qc.sdk.audio.ssr=false
 
 # Bluetooth
-qcom.bluetooth.soc=smd
-ro.bluetooth.dun=true
-ro.bluetooth.hfp.ver=1.7
-ro.bluetooth.sap=true
+bluetooth.hfp.client=1
+vendor.qcom.bluetooth.soc=pronto
+ro.bluetooth.hfp.ver=1.6
 ro.qualcomm.bt.hci_transport=smd
 
 # Camera
