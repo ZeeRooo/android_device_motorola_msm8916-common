@@ -22,7 +22,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := framework-res
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \
+		external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -57,7 +57,7 @@ PRODUCT_PACKAGES += \
     com.dsi.ant.antradio_library \
     AntHalService \
     libantradio
-	
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -71,7 +71,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@4.0-impl \
-	android.hardware.audio.effect@2.0-service
+		android.hardware.audio.effect@2.0-service
 
 # Only build audio HAL on non-lux devices
 ifeq ($(filter lux,$(TARGET_DEVICE)),)
@@ -82,7 +82,7 @@ endif
 PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
-	
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8916 \
@@ -90,7 +90,7 @@ PRODUCT_PACKAGES += \
     Snap \
     android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl
-	
+
 # LOSActions
 PRODUCT_PACKAGES += \
     LOSActions
@@ -119,7 +119,7 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl \
     android.hardware.renderscript@1.0-service \
     android.hardware.graphics.composer@2.1-impl
-	
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbt-vendor \
@@ -145,7 +145,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-	gps.conf \
+		gps.conf \
     libgnss \
     libgnsspps \
     android.hardware.gnss@1.0-impl-qti \
@@ -203,7 +203,7 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libshim_ril \
     libxml2
-	
+
 # Seccomp
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
@@ -213,7 +213,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
-	
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
@@ -244,14 +244,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     kernel/motorola/msm8916/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_cfg.dat \
     kernel/motorola/msm8916/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-	
+
 # Debug
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
     ro.debuggable=1 \
     persist.service.adb.enable=1 \
     persist.sys.usb.config=adb
-	
+
 # Usb
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
