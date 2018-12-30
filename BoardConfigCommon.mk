@@ -143,7 +143,12 @@ TARGET_RIL_VARIANT := caf
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/lib/libandroid.so|libshim_ril.so
+    /system/lib/libandroid.so|libshim_ril.so \
+    /system/lib/libjustshoot.so|libshims_camera.so \
+    /system/lib/libmot_sensorlistener.so|libsensor.so \
+    /system/vendor/lib/libqomx_jpegenc.so|libboringssl-compat.so \
+    /system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so \
+    /system/vendor/lib/libmmcamera_wavelet_lib.so|libc_util.so
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
