@@ -6,7 +6,7 @@
 /system/bin/thermal-engine                                  u:object_r:thermal-engine_exec:s0
 
 # Camera
-/data/cam_socket[12]                                        u:object_r:camera_socket:s0
+#/data/cam_socket[12]                                        u:object_r:camera_socket:s0
 
 # CMHW
 /sys/devices/virtual/timed_output/vibrator/vtg_level        u:object_r:vibeamp_sysfs:s0
