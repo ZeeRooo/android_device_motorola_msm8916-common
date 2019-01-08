@@ -1,0 +1,4 @@
+allow mediaserver hal_configstore_ISurfaceFlingerConfigs:hwservice_manager {find};
+allow mediaserver firmware_file:dir {search};
+
+binder_call(mediaserver, hal_configstore_default);
