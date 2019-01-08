@@ -11,11 +11,14 @@ allow mmi_boot_sh toolbox_exec:file rx_file_perms;
 # Logs to /dev/kmsg
 allow mmi_boot_sh kmsg_device:chr_file w_file_perms;
 
-allow mmi_boot_sh proc:file write;
-allow mmi_boot_sh radio_data_file:dir rw_dir_perms;
+allow mmi_boot_sh proc:file {write open};
+allow mmi_boot_sh radio_data_file:dir {rw_dir_perms create setattr};
 allow mmi_boot_sh radio_data_file:file create_file_perms;
 allow mmi_boot_sh self:capability chown;
 allow mmi_boot_sh sysfs_socinfo:file write;
 
 set_prop(mmi_boot_sh, manufacturedate_prop)
 set_prop(mmi_boot_sh, hw_rev_prop)
+
+allow mmi_boot_sh vendor_toolbox_exec:file {execute_no_trans};
+allow mmi_boot_sh firmware_file:dir {search};
