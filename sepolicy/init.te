@@ -2,3 +2,6 @@ allow init firmware_file:dir mounton;
 allow init fsg_file:dir mounton;
 allow init pstorefs:dir mounton;
 allow init sysfs_graphics:file {setattr};
+allow init sysfs:file {setattr};
+allow init vendor_file:file {execute_no_trans};
+allow init vendor_toolbox_exec:file {execute_no_trans};
