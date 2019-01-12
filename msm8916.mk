@@ -238,13 +238,10 @@ PRODUCT_PACKAGES += \
     WCNSS_wlan_dictionary.dat \
     hostapd \
     wpa_supplicant \
-    libcurl \
     libqsap_sdk \
-    tcpdump \
     wcnss_service \
     libwcnss_qmi \
     libwpa_client \
-    wificond \
     wifilogd \
     android.hardware.wifi@1.0-service
 
