@@ -1,2 +1,0 @@
-# Allow framework to get vendor_camera_prop
-get_prop(system_server, vendor_camera_prop)
