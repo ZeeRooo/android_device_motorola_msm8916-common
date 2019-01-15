@@ -128,3 +128,7 @@ ro.build.shutdown_timeout=5
 
 # WiFi
 wifi.interface=wlan0
+
+# Memory optimizations
+ro.vendor.qti.am.reschedule_service=true
+ro.vendor.qti.sys.fw.bservice_enable=true
