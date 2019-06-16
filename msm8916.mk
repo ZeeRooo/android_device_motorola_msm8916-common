@@ -125,9 +125,6 @@ PRODUCT_PACKAGES += \
     memtrack.msm8916 \
     libtinyxml
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-
 # Ebtables
 PRODUCT_PACKAGES += \
     ebtables \
@@ -231,6 +228,9 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
+
+# System Properties
+$(call inherit-product, $(LOCAL_PATH)/system_prop.mk)
 
 # Sensors
 PRODUCT_PACKAGES += \

@@ -109,9 +109,6 @@ TARGET_HAS_NO_POWER_STATS := true
 TARGET_HAS_NO_WLAN_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
 
-# Properties
-TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
-
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
