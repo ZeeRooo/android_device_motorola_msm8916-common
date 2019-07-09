@@ -199,6 +199,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.mmi.boot.sh \
     init.mmi.touch.sh \
+    init.mmi.bt.sh \
     init.mmi.usb.rc \
     init.qcom.rc \
     stml0xx_wrapper.sh \
