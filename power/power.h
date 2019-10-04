@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+const static power_hint_t POWER_HINT_SET_PROFILE = (power_hint_t)0x00000111;
+
 enum {
     PROFILE_POWER_SAVE = 0,
     PROFILE_BALANCED,
