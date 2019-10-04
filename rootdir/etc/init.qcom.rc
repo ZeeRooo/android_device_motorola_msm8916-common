@@ -260,6 +260,13 @@ on post-fs
 on post-fs-data
     mkdir /data/misc/camera 0770 camera camera
 
+    # Create the directories used by the Wireless subsystem
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/sockets 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa_supplicant 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
 
