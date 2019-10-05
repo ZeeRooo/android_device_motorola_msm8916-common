@@ -15,10 +15,9 @@ LOCAL_USE_AAPT2 := true
 LOCAL_PRIVATE_PLATFORM_APIS := true
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
-    android-support-v7-appcompat \
-    android-support-v7-preference \
-    android-support-v7-recyclerview \
-    android-support-v14-preference
+    androidx.appcompat_appcompat \
+    androidx.preference_preference \
+    androidx.recyclerview_recyclerview
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 

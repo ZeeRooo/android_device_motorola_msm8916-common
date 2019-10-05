@@ -18,12 +18,12 @@ package org.lineageos.settings.device;
 
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v14.preference.PreferenceFragment;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.internal.hardware.AmbientDisplayConfiguration;
 
-public class DozePreferenceFragment extends PreferenceFragment {
+public class DozePreferenceFragment extends PreferenceFragmentCompat {
     private final String CATEGORY_AMBIENT_DISPLAY = "ambient_display_key";
 
     @Override
