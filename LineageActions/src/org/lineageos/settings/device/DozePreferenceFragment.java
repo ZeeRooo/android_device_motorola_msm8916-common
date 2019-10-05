@@ -21,7 +21,7 @@ import android.os.UserHandle;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.android.internal.hardware.AmbientDisplayConfiguration;
+import android.hardware.display.AmbientDisplayConfiguration;
 
 public class DozePreferenceFragment extends PreferenceFragmentCompat {
     private final String CATEGORY_AMBIENT_DISPLAY = "ambient_display_key";
