@@ -32,7 +32,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=1
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3    
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -52,7 +52,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    vidc.enc.narrow.searchrange=1    
+    vidc.enc.narrow.searchrange=1 \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0
 
 # NITZ
 PRODUCT_PROPERTY_OVERRIDES += \
